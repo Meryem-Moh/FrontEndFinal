@@ -1,0 +1,17 @@
+.card{
+    background-color: #373649;
+    padding-top: 16px;
+    width: 5%;
+    min-width: 280px;
+    color: #000000;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: solid 2px #111FDE;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.photo {
+    height: 300px;
+    width: 300px; 
+}

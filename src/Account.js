@@ -1,3 +1,129 @@
+import React, { Component } from "react";
+
+import { Button, Flex, Box } from 'rebass';
+
+import { Card } from "reactstrap";
+
+import Header from './components/Header';
+
+class Account extends Component 
+{
+  constructor()
+  {
+    super();
+    this.state={ 
+
+     
+    }
+    
+  }
+
+  
+  render(
+
+  ) 
+  {
+    return(
+     
+        <Flex
+          sx={{
+            flexDirection: 'column',
+            minHeight: '100vh'
+          }}>
+          <Box>
+            <Header />
+          </Box>
+          <Flex
+            sx={{
+              flex: 1,
+              flexDirection: [
+                'column',
+                'row'
+              ]
+            }}>
+            <Box
+              sx={{
+                flex: 1,
+                minWidth: 0
+              }}>
+              Main Content
+            </Box>
+            <Box
+              sx={{
+                flexBasis: [
+                  'auto',
+                  64
+                ],
+                order: -1
+              }}>
+              Nav
+            </Box>
+            <Box
+              sx={{
+                flexBasis: [
+                  'auto',
+                  64
+                ]
+              }}>
+              Ads
+            </Box>
+          </Flex>
+          <Box>Footer</Box>
+        </Flex>
+
+
+    )
+    
+}
+
+}
+
+
+
+
+
+
+export default Account;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import React,{useEffect} from "react";
 import Header from "./components/Header";
 import { Link } from "react-router-dom";
@@ -54,3 +180,5 @@ const Account= ()=>{
   }
 
 export default Account;
+*/
+

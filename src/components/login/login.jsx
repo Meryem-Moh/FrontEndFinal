@@ -36,33 +36,37 @@ export class Login extends React.Component {
     }
     
    
-    
-    // this.props.history.push('account');
-    
-  // fetch(url, { 
-  //     method: 'POST',
-    
-  //     headers:{ 
-  //       'Content-Type': 'application/json'
-  //     } ,
-  //     "body": JSON.stringify(data),
-  //   })
-  //   .then(response => response.json())
-  //   .then(response => {
-  //     console.log('status '+ JSON.status)
-  //     // console.log('status '+ JSON.stringify(response))
-    
-  //     if(response.ok){
-  //     const jwt = JSON.stringify(response);
-  //     localStorage.setItem('JwTToken', jwt)
-  //  //   localStorage.getItem('JwTToken')
-  //     }
-  //     this.props.history.push("Account");
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //   })
-   
+    fetch(url, {
+      "method": "POST",
+      "headers": {
+        
+        "content-type": "application/json"
+        //"accept": "application/json"
+      },
+      "body": JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(response => {
+      //check if we get a 200 ok status
+      console.log('status '+JSON.stringify(response))
+      if(response.ok){
+      }
+      //const jwtToken = JSON.stringify(response);
+      let str = JSON.stringify(response);
+      const token = str.slice(8,-2);
+      localStorage.setItem('JWTToken', token);
+      
+  //console.log('This is jwt', localStorage.getItem('JWTToken'));
+
+      window.location.replace("/account")
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+
+
+  /* 
   fetch(url, {
     "method": "POST",
     "headers": {
@@ -85,6 +89,7 @@ export class Login extends React.Component {
       const jwtToken = response.jwt;
 
       localStorage.setItem('JWTToken', jwtToken)
+      console.log(JWTToken)
      // window.location.href= "/account";
      window.location.replace("/account")
    // }
@@ -97,6 +102,9 @@ export class Login extends React.Component {
     console.log(err);
   });
    
+
+
+  */
 }
 
   
@@ -112,7 +120,7 @@ export class Login extends React.Component {
             src="https://github.com/lvdy7114/FrontEndCapstone/blob/master/meritbank/Capstone%20images/malogo.PNG?raw=true"
             alt=""
           />
-          <h1><b>Welcome to Merit Online Banking!</b></h1>
+          <h1><b>Merit Bank</b></h1>
         </div>
         <form  onSubmit={this.handleSubmit}>
           <ul>
